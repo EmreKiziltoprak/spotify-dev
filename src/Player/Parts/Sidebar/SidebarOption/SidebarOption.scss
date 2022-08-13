@@ -1,0 +1,29 @@
+.sidebar-option{
+    display: block;
+    color: gray;
+    padding: 0.7em 0em;
+    padding-left: 0.5em;
+    cursor: pointer;
+    transition: 200ms color ease-in ;
+
+    &:hover{
+        color: white;
+    }
+
+
+    &1{
+        display: inline-block;
+        size: 15px;
+        margin-right: 0.5em;
+        position: relative;
+            /* Move the element to the right by 50% of the container's width */
+            /* Calculates 50% of the element's width, and moves it by that */
+            /* amount across the X-axis to the left */
+            transform: translateY(-10%);
+    }
+
+    &2{
+        margin-bottom: 0;
+        display: inline-block;
+    }
+}

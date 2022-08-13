@@ -1,0 +1,13 @@
+@import  "../../../custom.scss";
+
+.sidebar{
+
+    height: 100%;
+    background-color: $primary-dark;
+    min-width: 11rem;
+    color: white;
+
+    &__logo{
+        height: auto;
+    }
+}

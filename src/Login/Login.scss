@@ -1,0 +1,35 @@
+.login{
+    display: grid;
+    align-content: start;
+    justify-items: center;
+        height: 100vh;
+    background-color: black;
+
+    & > img {
+        width: 100%;
+    }
+
+        
+    .btn-primary {
+        border-radius: 99px;
+        text-overflow: ellipsis;
+        max-lines: 1;   
+        padding: 1em;
+        font-weight: 700;
+        color: white;
+        display: block;
+
+    }
+
+        &__img-container {
+            @media screen and (max-width: 480px) {
+                width: 90%;
+                aspect-ratio: 16/6;
+            }
+    
+            @media screen and (min-width: 800px) {
+                max-width: 700px;
+                        font-size: 1rem;
+            }
+        }
+}
