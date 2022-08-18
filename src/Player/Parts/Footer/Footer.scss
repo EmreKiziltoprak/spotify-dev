@@ -1,7 +1,80 @@
 @import "../../../custom.scss";
 
-.footer{
-    background-color: $secondary-dark;
-    height: 8rem; //sabit
-    border-top: .07rem solid rgb(86, 86, 86);
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  right: 0;
+  left: 0;
+  background-color: $secondary-dark;
+  height: 8rem; //sabit
+  border-top: 0.07rem solid rgb(86, 86, 86);
+
+  &__icon {
+    transform: scale(1.55);
+    margin-block: 0.5rem;
+    writing-mode: sideways-lr;
+    color: "white";
+
+    &:hover {
+      transition: transform 0.2 ease-in-out;
+      transform: scale(1.65) !important;
+    }
+  }
+  &__album {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  &__1 {
+    &__current_song {
+      color: white;
+    }
+  }
+
+  &__2 {
+    padding: 0 2.7em;
+    color: white;
+  }
+
+  &__3 {
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    & * .MuiSlider-root{
+        color: $primary;
+    }
+  }
+
+  &__player {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 100%;
+      flex-direction: row;
+    }
+
+    margin-top: 10px;
+    width: 100%;
+    height: 0.3rem;
+    background-color: gray;
+    border-radius: 25px;
+
+    @media screen and (max-width: 1080px) {
+      min-width: 150px;
+      max-width: 150px;
+    }
+
+    @media screen and (min-width: 1080px) {
+      width: 35vw;
+    }
+    &__status {
+    }
+  }
 }

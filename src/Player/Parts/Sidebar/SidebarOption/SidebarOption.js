@@ -9,9 +9,9 @@ export default function SidebarOption({title, option, Icon}) {
         <Icon />
       </div>
 
-      <di className="sidebar-option2">
+      <div className="sidebar-option2">
         <h6>{title}</h6>
-      </di>
+      </div>
     </div>
   );
 }

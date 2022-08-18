@@ -26,7 +26,8 @@ export default function Sidebar() {
           Icon={LibraryMusicIcon}
         />
       </nav>
-      
+
+      <h5 className=" ps-2 pt-1">Çalma Listeleri</h5>
       <hr />
       {/* PLAYLISTS */}
     </div>

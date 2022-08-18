@@ -1,0 +1,41 @@
+.header {
+  padding: 1.5em 1.5em;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  justify-content: space-between;
+
+  &__left {
+    padding: 0 0.3em;
+    min-width: 125px;
+    max-width: 15vw;
+    max-height: 35px;
+    background-color: white;
+    color: gray;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & > input {
+      max-width: 70%;
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__right {
+    color: white;
+    row-gap: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      margin-block: 0 0.8em;
+      writing-mode: vertical-lr;
+    }
+  }
+}
