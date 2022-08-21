@@ -3,17 +3,24 @@ import AppContext, { MainContext } from "./context/TokenContext";
 import Login from "./Login/Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApifrom from "spotify-web-api-js";
+import { useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux/es/exports";
 import { useDataLayerValue } from "./context/DataLayer";
 import Player from "./Player/Player";
+import { Provider } from "react-redux";
+import { store } from "./store/Store";
 const spotify = new SpotifyWebApifrom();
+
 
 
 function App() {
 
   const [success, setSuccess] = useState(false)
-  //const [token, setToken] = useState("");
 
-  const [{user, token}, dispatch]  = useDataLayerValue() 
+  const user = useSelector((state) => state.userSlice);
+  
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
 
@@ -24,14 +31,14 @@ function App() {
     
     spotify.setAccessToken(_token)
 
-     _token && dispatch({
+     _token && dispatch(userReducer(
         type: "SET_TOKEN",
-        token: _token,
-      });
+        token: _token
+      ));
 
     spotify.getMe().then((response) => {
 
-      console.log(response)
+      console.log("ID",response.id);
       
       dispatch({
         type: "SET_USER",
@@ -39,6 +46,10 @@ function App() {
 
       })
 
+      dispatch({
+       type: "SET_ID",
+       id: response.id,
+       });
 
     })
 
@@ -49,12 +60,12 @@ function App() {
     setSuccess,
     success
   }
+
   return (
-    <MainContext.Provider value={data}>
-      {token? <Player spotify={spotify}/> : <Login />}
-      {console.log("CONTEXT", user)}
-      {console.log("CONTEXT", token)}
-    </MainContext.Provider>
+    <>
+      {user.token ? <Player spotify={spotify} /> : <Login />}
+      {user.token && console.log("CONTEXT", user.token)}
+    </>
   );
 }
 

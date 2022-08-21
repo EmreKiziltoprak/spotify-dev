@@ -1,8 +1,11 @@
 .player {
+
   height: calc(100vh - 8rem);
   width: 100%;
+  overflow-y: auto;
 
   &__body {
+    height: 100%;
     display: flex;
     direction: row;
     height: 100%;

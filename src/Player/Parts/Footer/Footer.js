@@ -10,8 +10,21 @@ import { Grid, Slider } from '@mui/material';
 import VolumeDownIcon from "@mui/icons-material/VolumeDown";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import { useTheme } from '@emotion/react';
+import styled from 'styled-components';
+
+
+
+  const StyledGrid = styled(Grid)(({ theme }) => ({
+    height: "100%",
+    display: "flex",
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  }));
+
+
 
 export default function Footer() {
+
 
     const theme = useTheme();
     const duration = 200; // seconds
@@ -64,16 +77,16 @@ export default function Footer() {
       </div>
 
       <div className="col-md-3 col-3 footer__3">
-        <Grid container spacing={2}>
-          <Grid item>
+        <StyledGrid  container >
+          <Grid item xs={2} sm={2} md={1}>
             <PlaylistPlayIcon sx={{ color: "white" }} />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={2} sm={2} md={2} pe={2}>
             <VolumeDownIcon sx={{ color: "white" }} />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={4} sm={4} md={3}>
             <Slider
               size="small"
               defaultValue={70}
@@ -81,7 +94,7 @@ export default function Footer() {
               valueLabelDisplay="auto"
             />
           </Grid>
-        </Grid>
+        </StyledGrid>
       </div>
 
       <h1 className="text-center">Sidebar</h1>

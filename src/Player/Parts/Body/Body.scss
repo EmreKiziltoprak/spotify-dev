@@ -1,4 +1,43 @@
+@mixin img-shadow{
+        box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.5);
+}
+
 .body {
   height: 100%;
+  min-height: 550px;
+  overflow: hidden;
   background: linear-gradient(rgb(91, 87, 115), 30% ,rgb(3, 1, 16));
+
+  @media screen and (max-width: 768px) {
+      min-height: 250px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      min-height: 550px;
+    }
+  &__info{
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+
+    & > img {
+      height: 20vw;
+      margin: 0 20px;
+      @include img-shadow;
+    }
+
+    &Text{
+      color: white;
+      flex:1;
+
+      & > h2 {
+        font-size: 2.5rem;
+        margin-bottom : 0.5rem;
+      }
+
+      & > p {
+          font-size: 0.8rem;
+      }
+    }
+  }
 }
